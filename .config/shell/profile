@@ -8,6 +8,9 @@
 # Adds `~/.local/bin` to $PATH
 export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 
+# Adds `~/.config/emacs` to $PATH (DOOM Emacs)
+export PATH="$PATH:${$(find ~/.config/emacs/bin -type d -printf %p:)%%:}"
+
 unsetopt PROMPT_SP
 
 # Default programs:
