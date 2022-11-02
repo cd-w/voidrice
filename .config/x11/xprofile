@@ -10,7 +10,7 @@ remaps &		# run the remaps script, switching caps/esc and more; check it for mor
 
 # chus-startup-audio-automator takes a bit (10 or so seconds on my machine) to be done setting up audio.
 
-autostart="mpd xcompmgr dunst unclutter pipewire chus-startup-audio-automator"
+autostart="autorandr mpd xcompmgr dunst unclutter pipewire chus-startup-audio-automator"
 
 for program in $autostart; do
 	pidof -s "$program" || "$program" &
