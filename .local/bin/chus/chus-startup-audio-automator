@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+systemctl --user stop pulseaudio.service &&
+    sleep 3 &&
+    systemctl --user stop pulseaudio.socket &&
+    sleep 3 &&
+    jack_control start &&
+    sleep 3 &&
+    cadence-pulse2jack

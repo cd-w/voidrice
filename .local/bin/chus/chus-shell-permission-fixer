@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Made for fixing my own shell scripts that I put in my ~/.local/bin folder that start with the prefix "chu" in their file name.
+
+# Check if files have a ".sh" file extension, if so this will remove said extension.
+for i in *; do [ "${i/%.sh/}" != "$i" ] && echo '".sh" file extension postfixes on applicable filenames found, fixing...' && mv "$i" "${i/%.sh/}" && echo 'Postfix fix successful, continuing...'; done
+# Setting permissions
+echo "Setting user executable permissions on applicable files..."
+chmod u+x ~/.local/bin/*/*
+echo "Setting group executable permissions on applicable files..."
+chmod g+x ~/.local/bin/*/*
+echo "Setting executable permissions on applicable files for other users..."
+chmod o+x ~/.local/bin/*/*
+echo "Setting group ownership on applicable files..."
+chgrp -R wheel ~/.local/bin/*/*
+echo "Job complete, enjoy!"
+exec $SHELL
